@@ -147,7 +147,7 @@ async def duck(ctx):
 async def dog(ctx):
     dog_url = get_dog_image_url()
     await ctx.send(dog_url)
-@bot.command()
+# @bot.command()
 # async def meme(ctx):
 #     # meme_url = get_meme_image_url()
 #     # await ctx.send(meme_url)
@@ -165,10 +165,36 @@ async def joined(ctx, member: discord.Member):
 
 @bot.command()
 async def tips(ctx):
-    await ctx.send("https://www.biofarma.co.id/id/announcement/detail/8-tips-menjaga-kesehatan-dari-polusi-udara")
+    nums = random.randint(1,6)
+    # if nums == 1:
+    #     await ctx.send("https://www.biofarma.co.id/id/announcement/detail/8-tips-menjaga-kesehatan-dari-polusi-udara")
+    # if nums == 2:
+    #     await ctx.send("https://www.halodoc.com/artikel/ini-5-cara-sederhana-dan-efektif-mengatasi-pencemaran-udara")
+    # if nums == 3:
+    #     await ctx.send("https://www.detik.com/bali/berita/d-6424426/10-cara-mengatasi-pencemaran-udara-dan-pencegahannya")
+    # if nums == 4:
+    #     await ctx.send("https://www.zurich.co.id/id-id/blog/articles/2019/08/5-cara-yang-bisa-anda-lakukan-untuk-mengurangi-polusi-udara-di-jakarta")
+    # if nums == 5:
+    #     await ctx.send("https://www.tokopedia.com/blog/cara-mengatasi-polusi-udara-hlv/?utm_source=google&utm_medium=organic")
+    # if nums == 6:
+    #     await ctx.send("https://www.jakartanotebook.com/blog/cara-mengatasi-polusi-udara-edu/")
 
-@bot.command()
-async def ide(ctx):
-    await ctx.send(" Menggunakan masker agar tidak terkena polusi\n Berjalan kaki jika ingin pergi ke tempat yang dekat\n Menggunakan transportasi umum untuk berpergian\n Jika bisa menggunakan alat transportasi listrik\n Tidak merokok\n Menanam tumbuhan / pohon di sekitar rumah")
+    tips_dict = {
+        1: "https://www.biofarma.co.id/id/announcement/detail/8-tips-menjaga-kesehatan-dari-polusi-udara",
+        2: "https://www.halodoc.com/artikel/ini-5-cara-sederhana-dan-efektif-mengatasi-pencemaran-udara",
+        3: "https://www.detik.com/bali/berita/d-6424426/10-cara-mengatasi-pencemaran-udara-dan-pencegahannya",
+        4: "https://www.zurich.co.id/id-id/blog/articles/2019/08/5-cara-yang-bisa-anda-lakukan-untuk-mengurangi-polusi-udara-di-jakarta",
+        5: "https://www.tokopedia.com/blog/cara-mengatasi-polusi-udara-hlv/?utm_source=google&utm_medium=organic",
+        6: "https://www.jakartanotebook.com/blog/cara-mengatasi-polusi-udara-edu/"
+    }
+    
+    tip_url = tips_dict.get(nums, "Invalid number")
+    await ctx.send(tip_url)
+    
 
-bot.run('TOKEN')
+
+# @bot.command()
+# async def ide(ctx):
+#     await ctx.send(" Menggunakan masker agar tidak terkena polusi\n Berjalan kaki jika ingin pergi ke tempat yang dekat\n Menggunakan transportasi umum untuk berpergian\n Jika bisa menggunakan alat transportasi listrik\n Tidak merokok\n Menanam tumbuhan / pohon di sekitar rumah")
+
+bot.run('')
